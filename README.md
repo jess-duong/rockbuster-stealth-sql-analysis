@@ -45,41 +45,6 @@ Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster'
 - GROUP BY with HAVING clauses
 - Window functions for ranking
 
-## Repository Structure
-
-```
-rockbuster-stealth-sql-analysis/
-├── README.md
-├── reports/
-│   ├── Rockbuster_Analysis_Results.xlsx
-│   ├── Rockbuster_Streaming_Campaign_Data_Dictionary.pdf
-│   ├── Rockbuster_Streaming_Campaign_Final.pdf
-│   └── Rockbuster_Streaming_Campaign_Final.pptx
-├── sql-queries/
-│   ├── 01a_film_descriptive_stats.sql
-│   ├── 01b_revenue_metrics.sql
-│   ├── 02a_customer_store_address_stats.sql
-│   ├── 02b_customer_modal_values.sql
-│   ├── 02c_distinct_customer_countries.sql
-│   ├── 03_customer_location.sql
-│   ├── 04_customers_by_country.sql
-│   ├── 05_top_3_revenue_by_country.sql
-│   ├── 06_revenue_by_genre.sql
-│   ├── 07_rentals_by_genre.sql
-│   ├── 08_revenue_by_rating.sql
-│   ├── 09a_top_10_films.sql
-│   ├── 09b_bottom_10_films.sql
-│   ├── 10_customer_lifetime_value.sql
-│   ├── 11_top_cities_by_top_countries.sql
-│   ├── 12_top_5_customers_in_top_cities.sql
-│   ├── 13_top_5_customers_subquery.sql
-│   ├── 14_top_5_customers_cte.sql
-│   ├── 15_customers_by_country_bubble_map.sql
-│   └── 16_high_value_customers_gradient_map.sql
-└── visualizations/
-    └── Rockbuster ERD.png
-```
-
 ## Query Files
 
 ### SQL Queries (`sql-queries/`)
