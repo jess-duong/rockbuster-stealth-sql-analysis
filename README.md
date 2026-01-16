@@ -89,7 +89,7 @@ Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster'
 
 ## Tableau Visualizations
 
-- [Customer Distribution Map](https://public.tableau.com/authoring/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets#1)
+- [Customer Distribution Map](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)
 - [Top 10 Countries by Customer Count](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountry/Top10CustomersbyCountries)
 
 ## Business Impact
