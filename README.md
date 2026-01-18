@@ -47,7 +47,7 @@ Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster'
 
 ## Query Files
 
-### SQL Queries (`sql-queries/`)
+### SQL Queries
 
 | File | Description |
 |------|-------------|
@@ -72,7 +72,7 @@ Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster'
 | `15_customers_by_country_bubble_map.sql` | Data for Tableau bubble map |
 | `16_high_value_customers_gradient_map.sql` | Data for Tableau gradient map |
 
-### Reports (`reports/`)
+### Reports
 
 | File | Description |
 |------|-------------|
@@ -81,7 +81,7 @@ Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster'
 | `Rockbuster_Streaming_Campaign_Final.pdf` | Final presentation (PDF format) |
 | `Rockbuster_Streaming_Campaign_Final.pptx` | Final presentation (PowerPoint format) |
 
-### Visualizations (`visualizations/`)
+### Visualizations
 
 | File | Description |
 |------|-------------|
