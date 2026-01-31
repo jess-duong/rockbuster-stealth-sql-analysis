@@ -36,10 +36,11 @@ Rockbuster Stealth LLC, a former global movie rental company, is transitioning f
 
 ## Repository Contents
 ```
-├── Queries/                    # 16+ SQL queries (market analysis, revenue, customer insights)
-├── Visualizations/             # Tableau dashboards, ERD diagram
-├── Reports/                    # Data dictionary, analysis workbook, presentation
+├── sql-queries/                # 16+ SQL queries (market analysis, revenue, customer insights)
+├── visualizations/             # Tableau dashboards, ERD diagram
+├── reports/                    # Data dictionary, analysis workbook, presentation
 └── README.md                   # Project documentation
+```
 ```
 
 ## Strategic Recommendations
@@ -97,11 +98,11 @@ Rockbuster Stealth LLC, a former global movie rental company, is transitioning f
 
 ## Documentation
 
-- **[SQL Query Library](Queries/)**: 16+ queries covering market analysis, customer segmentation, and revenue metrics
-- **[Data Dictionary](Reports/)**: Complete database schema with field definitions and relationships
-- **[Analysis Workbook](Reports/)**: Detailed findings with supporting tables and charts
-- **[Stakeholder Presentation](Reports/)**: Executive summary with visualizations and strategic recommendations
-- **[ERD Diagram](Visualizations/)**: Entity Relationship Diagram showing database structure
+- **[SQL Query Library](sql-queries/)**: 16+ queries covering market analysis, customer segmentation, and revenue metrics
+- **[Data Dictionary](reports/Rockbuster_Streaming_Campaign_Data_Dictionary.pdf)**: Complete database schema with field definitions and relationships
+- **[Analysis Workbook](reports/Rockbuster_Analysis_Results.xlsx)**: Detailed findings with supporting tables and charts
+- **[Stakeholder Presentation](reports/Rockbuster_Streaming_Campaign_Final.pdf)**: Executive summary with visualizations and strategic recommendations
+- **[ERD Diagram](visualizations/)**: Entity Relationship Diagram showing database structure
 
 ## Project Context
 
@@ -128,7 +129,7 @@ This project was completed as part of CareerFoundry's Data Analytics program, de
 - **Churn risk analysis**: Identify customer retention patterns and at-risk segments
 - **Competitive benchmarking**: Compare Rockbuster positioning against Netflix/Prime market penetration
 
-## 👤 Author
+## Author
 
 **Jess Duong**  
 Data Analyst | [LinkedIn](https://linkedin.com/in/jessica-duong-35690847/) | [GitHub](https://github.com/jess-duong) | duong.t.jess@gmail.com
