@@ -1,122 +1,140 @@
-# Rockbuster Stealth LLC - SQL Analysis for Streaming Launch Strategy
+# Rockbuster Stealth SQL Analysis
+
+**Relational database analysis using PostgreSQL to guide streaming service launch strategy for a transitioning movie rental company.**
+
+[![View Dashboard](https://img.shields.io/badge/Tableau-Customer_Distribution-orange)](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)
+[![View Queries](https://img.shields.io/badge/View-SQL_Queries-blue)](Queries/)
 
 ## Project Overview
 
-Rockbuster Stealth LLC, a former global movie rental company, is transitioning from physical stores to a competitive online streaming service. This SQL-based analysis provides data-driven insights to guide the launch strategy by identifying high-value customers, revenue-generating content, and priority markets.
+Rockbuster Stealth LLC, a former global movie rental company, is transitioning from physical stores to compete in the online streaming market. Facing pressure from Netflix and Amazon Prime, management needed data-driven insights to guide their launch strategy. This SQL analysis examined customer behavior, revenue patterns, and geographic markets to identify priorities for the streaming platform rollout.
 
-## Business Context
-
-Facing pressure from streaming giants like Netflix and Amazon Prime, Rockbuster's management team needed answers to critical questions:
-
+### Business Questions
 - Which geographic markets should we prioritize for launch?
 - What film content generates the most revenue?
 - Where are our most valuable customers located?
-- How should we allocate our marketing budget across regions?
+- How should we allocate marketing budget across regions?
 
-## Key Findings
+### Key Findings
+- **India, China, and United States represent ~40% of customer base**: Identified as Tier-1 priority markets
+- **Sports, Sci-Fi, and Animation deliver 20%+ higher revenue** than other genres
+- **Top customers distributed globally**: Not concentrated in single geography; requires multi-region strategy
+- **Tier-2 expansion markets identified**: Japan, Mexico, Brazil, Russia, Philippines, Turkey, Indonesia
 
-### Market Analysis
-- **India, China, and the United States** represent ~40% of the customer base
-- Top customers are distributed globally, not concentrated in a single geography
-- **Tier-1 markets:** India, China, United States
-- **Tier-2 markets:** Japan, Mexico, Brazil, Russia, Philippines, Turkey, Indonesia
+## Tools & Techniques
 
-### Content Performance
-- **Sports, Sci-Fi, and Animation** deliver the strongest revenue performance
-- Film ratings show consistent revenue across PG, PG-13, and R categories
-- Top 10 films generate disproportionate revenue compared to bottom performers
-
-### Customer Insights
-- High-value customers exist across all major markets
-- Customer lifetime value varies significantly by region
-- Top cities within priority countries identified for targeted marketing
-
-## Tools & Skills
-
-- **PostgreSQL** - Complex queries, data analysis
-- **Tableau Public** - Interactive visualizations
-- **Database Management** - Relational database concepts, ERD interpretation
+**Tools**: PostgreSQL, pgAdmin, Tableau, DbVisualizer  
+**Skills**: SQL querying, relational database analysis, data visualization, business intelligence, stakeholder presentation
 
 ### SQL Techniques Demonstrated
-- Multi-table JOINs (INNER, LEFT, RIGHT)
-- Subqueries (nested and correlated)
-- Common Table Expressions (CTEs)
-- Aggregate functions (SUM, COUNT, AVG)
-- GROUP BY with HAVING clauses
-- Window functions for ranking
+- Multi-table JOINs (INNER, LEFT, RIGHT) across 15-table schema
+- Subqueries (nested and correlated) for complex filtering
+- Common Table Expressions (CTEs) for improved query readability
+- Aggregate functions with GROUP BY and HAVING clauses
+- Window functions for ranking and segmentation
+- Database schema interpretation using ERD
 
-## Query Files
+## Repository Contents
+```
+├── Queries/                    # 16+ SQL queries (market analysis, revenue, customer insights)
+├── Visualizations/             # Tableau dashboards, ERD diagram
+├── Reports/                    # Data dictionary, analysis workbook, presentation
+└── README.md                   # Project documentation
+```
 
-### SQL Queries
+## Strategic Recommendations
 
-| File | Description |
-|------|-------------|
-| `01a_film_descriptive_stats.sql` | Film metrics (length, duration, rate, cost) |
-| `01b_revenue_metrics.sql` | Revenue metrics (total, avg transaction, avg per customer) |
-| `02a_customer_store_address_stats.sql` | Store, address, and active status counts |
-| `02b_customer_modal_values.sql` | Most common names, email, active status |
-| `02c_distinct_customer_countries.sql` | Count of distinct countries |
-| `03_customer_location.sql` | Full customer location details |
-| `04_customers_by_country.sql` | Customer count by country |
-| `05_top_3_revenue_by_country.sql` | Top revenue-generating countries |
-| `06_revenue_by_genre.sql` | Revenue breakdown by film genre |
-| `07_rentals_by_genre.sql` | Rental volume by genre |
-| `08_revenue_by_rating.sql` | Revenue by MPAA rating |
-| `09a_top_10_films.sql` | Top 10 revenue-generating films |
-| `09b_bottom_10_films.sql` | Bottom 10 revenue-generating films |
-| `10_customer_lifetime_value.sql` | Customer CLV with location data |
-| `11_top_cities_by_top_countries.sql` | Top cities within top countries |
-| `12_top_5_customers_in_top_cities.sql` | Top customers in key cities |
-| `13_top_5_customers_subquery.sql` | Same query using nested subqueries |
-| `14_top_5_customers_cte.sql` | Same query using CTEs |
-| `15_customers_by_country_bubble_map.sql` | Data for Tableau bubble map |
-| `16_high_value_customers_gradient_map.sql` | Data for Tableau gradient map |
+### Market Launch Strategy
+- **Phase 1 (Tier-1 Markets)**: Launch in India, China, and United States simultaneously
+  - Represents largest customer concentration and established payment infrastructure
+  - Localize content libraries with regional film preferences
+  - Allocate 60% of marketing budget to these three markets
 
-### Reports
+- **Phase 2 (Tier-2 Expansion)**: Roll out to Japan, Mexico, Brazil within 6 months
+  - Strong existing customer bases with high lifetime value
+  - Secondary revenue opportunity with lower competitive intensity
+  - Allocate 30% of marketing budget for phased expansion
 
-| File | Description |
-|------|-------------|
-| `Rockbuster_Analysis_Results.xlsx` | Detailed analysis workbook with all findings |
-| `Rockbuster_Streaming_Campaign_Data_Dictionary.pdf` | Database schema and field definitions |
-| `Rockbuster_Streaming_Campaign_Final.pdf` | Final presentation (PDF format) |
-| `Rockbuster_Streaming_Campaign_Final.pptx` | Final presentation (PowerPoint format) |
+### Content Acquisition Priorities
+- **Invest heavily in Sports, Sci-Fi, and Animation content**: These genres drive 20%+ higher revenue per rental
+- **Maintain balanced rating mix**: PG, PG-13, and R-rated content show consistent revenue performance
+- **Focus on proven franchises**: Top 10 films generate disproportionate revenue; prioritize sequel/franchise rights
 
-### Visualizations
+### Customer Targeting
+- **High-value customer segments exist in all major markets**: Avoid over-indexing on single geography
+- **City-level targeting recommended**: Top cities within priority countries identified for localized campaigns
+- **Customer lifetime value varies 3x across regions**: Adjust acquisition spend based on projected CLV by market
 
-| File | Description |
-|------|-------------|
-| `Rockbuster ERD.png` | Entity Relationship Diagram of the database |
+## Data Scope & Analysis
 
-## Tableau Visualizations
+**Database**: PostgreSQL (15 tables, 599 customers across 108 countries)  
+**Time Period**: Historical rental transactions (2005-2006)  
+**Geographic Coverage**: Global customer base with concentrations in Asia, North America, Europe
 
-- [Customer Distribution Map](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)
-- [Top 10 Countries by Customer Count](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountry/Top10CustomersbyCountries)
+### Analytical Approach
+- Analyzed 15-table relational database using complex multi-table JOINs
+- Calculated customer lifetime value (CLV) by geography and segment
+- Aggregated revenue by genre, rating, and film to identify content patterns
+- Ranked markets by customer count, revenue, and strategic importance
+- Built interactive Tableau dashboards for geographic and customer analysis
 
-## Business Impact
-This analysis provided Rockbuster's executive team with:
-- **Clear market prioritization** for resource allocation
-- **Data-backed content strategy** aligned with revenue patterns
-- **Geographic expansion roadmap** with phased rollout plan
-- **Customer segmentation insights** for targeted marketing
+### Data Limitations
+- **Historical rental data**: Physical rental patterns may not fully predict streaming behavior
+- **Sample database**: Fictional dataset designed for educational purposes
+- **Limited timeframe**: 2005-2006 data requires validation against current market conditions
+- **Revenue proxy**: Rental revenue used as proxy for streaming subscription value
 
-## Skills Demonstrated
-- Advanced SQL query writing and optimization
-- Relational database analysis across complex schemas
-- Business intelligence and strategic insight generation
-- Data storytelling and executive communication
-- Geographic and demographic market analysis
+## Interactive Visualizations
+
+**[Customer Distribution & Affinity Map](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)**  
+**[Top 10 Countries by Customer Count](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountry/Top10CustomersbyCountries)**
+
+### Visualization Features
+- Geographic bubble maps showing customer concentration by country
+- Gradient maps highlighting high-value customer locations
+- Revenue breakdown by genre and rating category
+- Top customer identification within priority cities
+
+## Documentation
+
+- **[SQL Query Library](Queries/)**: 16+ queries covering market analysis, customer segmentation, and revenue metrics
+- **[Data Dictionary](Reports/)**: Complete database schema with field definitions and relationships
+- **[Analysis Workbook](Reports/)**: Detailed findings with supporting tables and charts
+- **[Stakeholder Presentation](Reports/)**: Executive summary with visualizations and strategic recommendations
+- **[ERD Diagram](Visualizations/)**: Entity Relationship Diagram showing database structure
+
+## Project Context
+
+This project was completed as part of CareerFoundry's Data Analytics program, demonstrating proficiency in:
+- SQL query writing and optimization for business intelligence
+- Relational database navigation across complex multi-table schemas
+- Geographic market analysis and customer segmentation
+- Translating analytical findings into actionable business strategy
+- Creating stakeholder-ready presentations for executive decision-making
+
+### Technical Approach
+- **Database Platform**: PostgreSQL with pgAdmin interface
+- **Query Strategy**: Progressive complexity from simple aggregations to nested CTEs
+- **Code Organization**: Modular queries organized by business question
+- **Visualization Tools**: Tableau Public for interactive geographic analysis
+- **Presentation Design**: Executive-focused narrative with data-backed recommendations
 
 ## Future Analysis Opportunities
-- Predictive modeling for streaming demand by market
-- Optimal pricing tier analysis by region
-- City-level targeting for customer acquisition campaigns
-- Content recommendation engine based on rental patterns
 
-## Author
+### Recommended Enhancements
+- **Predictive demand modeling**: Forecast streaming subscriptions by market using historical rental patterns
+- **Pricing optimization**: Analyze price sensitivity across regions to set tiered subscription rates
+- **Content recommendation engine**: Build collaborative filtering model based on rental history
+- **Churn risk analysis**: Identify customer retention patterns and at-risk segments
+- **Competitive benchmarking**: Compare Rockbuster positioning against Netflix/Prime market penetration
+
+## 👤 Author
+
 **Jess Duong**  
-Aspiring Business Intelligence Analyst  
+Data Analyst | [LinkedIn](https://linkedin.com/in/jessica-duong-35690847/) | [GitHub](https://github.com/jess-duong) | duong.t.jess@gmail.com
 
+---
 
-## Data Citation
+*Data provided by CareerFoundry as part of the Data Analytics certification program. The Rockbuster database is a PostgreSQL sample dataset representing a fictional DVD rental company.*
 
-Data provided by CareerFoundry as part of the Data Analytics certification program. The Rockbuster database is a PostgreSQL sample database representing a fictional DVD rental company.
+*For questions about methodology or to discuss this analysis, please reach out via [LinkedIn](https://linkedin.com/in/jessica-duong-35690847/) or open an issue in this repository.*
