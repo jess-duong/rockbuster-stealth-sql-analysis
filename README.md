@@ -41,7 +41,6 @@ Rockbuster Stealth LLC, a former global movie rental company, is transitioning f
 ├── reports/                    # Data dictionary, analysis workbook, presentation
 └── README.md                   # Project documentation
 ```
-```
 
 ## Strategic Recommendations
 
