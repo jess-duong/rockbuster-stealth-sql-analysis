@@ -2,7 +2,7 @@
 
 **Relational database analysis using PostgreSQL to guide streaming service launch strategy for a transitioning movie rental company.**
 
-[![View Dashboard](https://img.shields.io/badge/Tableau-Customer_Distribution-orange)](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)
+[![View Dashboard](https://img.shields.io/badge/Tableau-Customer_Distribution-orange)](https://public.tableau.com/app/profile/jess.duong/viz/RockbusterStreamingLaunchCampaign/Story2)
 [![View Queries](https://img.shields.io/badge/View-SQL_Queries-blue)](sql-queries/)
 
 ## Project Overview
@@ -37,7 +37,7 @@ Rockbuster Stealth LLC, a former global movie rental company, is transitioning f
 ## Repository Contents
 ```
 ├── sql-queries/                # 16+ SQL queries (market analysis, revenue, customer insights)
-├── visualizations/             # Tableau dashboards, ERD diagram
+├── visualizations/             # Tableau dashboard, ERD diagram
 ├── reports/                    # Data dictionary, analysis workbook, presentation
 └── README.md                   # Project documentation
 ```
@@ -86,8 +86,7 @@ Rockbuster Stealth LLC, a former global movie rental company, is transitioning f
 
 ## Interactive Visualizations
 
-**[Customer Distribution & Affinity Map](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)**  
-**[Top 10 Countries by Customer Count](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountry/Top10CustomersbyCountries)**
+**[Launch Prioritization Strategy](https://public.tableau.com/app/profile/jess.duong/viz/RockbusterStreamingLaunchCampaign/Story2)**  
 
 ### Visualization Features
 - Geographic bubble maps showing customer concentration by country
