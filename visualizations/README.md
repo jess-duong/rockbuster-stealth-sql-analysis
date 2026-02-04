@@ -1,9 +1,9 @@
 # Visualizations Directory
 
-## Interactive Tableau Dashboards
+## Interactive Tableau Dashboard
 
-**[Customer Distribution & Affinity Map](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountryandAffinity/High_AffinityCustomerMarkets?publish=yes)**  
-**[Top 10 Countries by Customer Count](https://public.tableau.com/app/profile/jess.duong/viz/RockbustersTopCustomersbyCountry/Top10CustomersbyCountries)**
+**[Launch Prioritization Strategy](https://public.tableau.com/app/profile/jess.duong/viz/RockbusterStreamingLaunchCampaign/Story2)**  
+
 
 ## Static Visualizations
 
