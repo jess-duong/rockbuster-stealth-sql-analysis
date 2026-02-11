@@ -130,7 +130,7 @@ This project was completed as part of CareerFoundry's Data Analytics program, de
 ## Author
 
 **Jess Duong**  
-Data Analyst | [LinkedIn](https://www.linkedin.com/in/jesstduong/) | [GitHub](https://github.com/jess-duong) | duong.t.jess@gmail.com
+Data Analyst | [LinkedIn](https://www.linkedin.com/in/jesstduong/) | [Portfolio](https://jess-duong.github.io/) | duong.t.jess@gmail.com
 
 ---
 
