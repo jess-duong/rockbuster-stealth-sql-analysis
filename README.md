@@ -53,7 +53,7 @@ The top three customers by lifetime value are located in Réunion ($211.55), the
 
 India leads with 60 customers and over $6,000 in total payments, followed by China and the United States. These three Tier-1 markets combine high customer volume with established payment infrastructure, making them natural launch targets. A secondary tier with Japan (31), Mexico (30), Brazil (28), and Russia (28) offers strong expansion potential with lower competitive intensity.
 
-![High-Affinity Customer Markets](visualizations/High_Affinity_Customer_Markets.png)
+![Top 10 Customer Countries](visualizations/rockbuster-findings.jpg)
 
 ### Content Performance
 
@@ -63,7 +63,7 @@ Genre revenue analysis shows a clear hierarchy: Sports, Sci-Fi, and Animation fo
 
 Average revenue per customer is $101.50, with a 3x variance across regions. The average rental rate sits at $2.98 with a 5-day rental duration. Top customers contribute $160–$210 each in lifetime value, and their global distribution suggests that premium pricing tiers and loyalty programs should be designed for multi-region deployment rather than localized to one market.
 
-![Top 10 Customers by Countries](visualizations/Top_10_Customers_by_Countries.png)
+![Global Customer Distribution](visualizations/rockbuster-impact.jpg)
 
 ## Recommendations
 
