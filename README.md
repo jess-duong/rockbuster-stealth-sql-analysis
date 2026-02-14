@@ -3,7 +3,7 @@
 **Relational database analysis using PostgreSQL to guide streaming service launch strategy for a transitioning movie rental company.**
 
 [![View Dashboard](https://img.shields.io/badge/Tableau-Launch_Strategy_Dashboard-2B5329?style=flat-square&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/jess.duong/viz/RockbusterStreamingLaunchCampaign/Story2)
-[![View Presentation](https://img.shields.io/badge/PDF-Stakeholder_Presentation-5A8F5C?style=flat-square&logo=adobe&logoColor=white)](reports/Rockbuster_Streaming_Campaign_Final.pdf)
+[![View Presentation](https://img.shields.io/badge/PDF-Stakeholder_Presentation-6AAB73?style=flat-square&logo=adobe&logoColor=white)](reports/Rockbuster_Streaming_Campaign_Final.pdf)
 [![View Queries](https://img.shields.io/badge/SQL-Query_Library-C4A84D?style=flat-square&logo=postgresql&logoColor=white)](sql-queries/)
 
 ---
