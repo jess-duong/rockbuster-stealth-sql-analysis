@@ -59,6 +59,8 @@ India leads with 60 customers and over $6,000 in total payments, followed by Chi
 
 Genre revenue analysis shows a clear hierarchy: Sports, Sci-Fi, and Animation form the top tier, while Drama, Comedy, and Action provide a profitable middle. Thriller is an extreme outlier at just $48 total revenue. By film rating, PG-13, NC-17, and PG lead revenue, indicating the core audience skews teen-to-adult rather than family-focused.
 
+![Total Revenue by Genre](visualizations/rockbuster-constraints.jpg)
+
 ### Customer Value
 
 Average revenue per customer is $101.50, with a 3x variance across regions. The average rental rate sits at $2.98 with a 5-day rental duration. Top customers contribute $160–$210 each in lifetime value, and their global distribution suggests that premium pricing tiers and loyalty programs should be designed for multi-region deployment rather than localized to one market.
@@ -109,5 +111,3 @@ Data Analyst | [LinkedIn](https://www.linkedin.com/in/jess-duong/) | [Portfolio]
 ---
 
 *Data source: Rockbuster Stealth PostgreSQL sample database provided by CareerFoundry. Fictional dataset representing a global DVD rental company (599 customers, 108 countries, ~$61K total revenue).*
-
-*For questions about methodology or to discuss this analysis, please reach out via [LinkedIn](https://linkedin.com/in/jessica-duong-35690847/) or open an issue in this repository.*
