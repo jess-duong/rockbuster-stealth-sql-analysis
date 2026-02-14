@@ -39,7 +39,7 @@ Analysis of 599 customers across 108 countries revealed that **customer concentr
 India (60 customers), China (53), and the United States (36) together represent the largest addressable market with minimal geographic spread. Launching in these three markets first captures the highest customer density while keeping operational complexity manageable.
 
 **2. Sports, Sci-Fi, and Animation generate 20%+ higher revenue per rental than the catalog average.**
-Sports leads all genres at $4,892 in total revenue, followed by Sci-Fi ($4,336) and Animation ($4,245). The bottom genre (Thriller) generated just $48 — a 100x gap. This signals where licensing investment should be concentrated for the streaming library.
+Sports leads all genres at $4,892 in total revenue, followed by Sci-Fi ($4,336) and Animation ($4,245). The bottom genre (Thriller) generated just $48, a 100x gap. This signals where licensing investment should be concentrated for the streaming library.
 
 **3. Revenue is heavily concentrated in a small number of hit titles.**
 The top 10 films each generate $170–$215 in revenue, while the bottom 10 generate less than $8. This skew means Rockbuster should prioritize acquiring sequel and franchise rights rather than building a large undifferentiated catalog.
@@ -51,7 +51,7 @@ The top three customers by lifetime value are located in Réunion ($211.55), the
 
 ### Market Prioritization
 
-India leads with 60 customers and over $6,000 in total payments, followed by China and the United States. These three Tier-1 markets combine high customer volume with established payment infrastructure, making them natural launch targets. A secondary tier with Japan (31), Mexico (30), Brazil (28), and Russia (28) offers strong expansion potential with lower competitive intensity.
+India leads with 60 customers and over $6,000 in total payments, followed by China and the United States. These three Tier-1 markets combine high customer volume with established payment infrastructure, making them natural launch targets. A secondary tier, including Japan (31), Mexico (30), Brazil (28), and Russia (28), offers strong expansion potential with lower competitive intensity.
 
 ![Top 10 Customer Countries](visualizations/rockbuster-findings.jpg)
 
