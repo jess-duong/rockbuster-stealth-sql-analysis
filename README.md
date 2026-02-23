@@ -14,9 +14,13 @@ Rockbuster Stealth LLC is a former global movie rental chain facing existential 
 
 As a data analyst on the BI team, I queried Rockbuster's 15-table PostgreSQL database to analyze customer geography, revenue patterns, and content performance across 108 countries. The findings were delivered as a stakeholder presentation to the management board and an interactive Tableau dashboard for ongoing strategic use.
 
+---
+
 ## Data Structure
 
 The Rockbuster database contains **15 interconnected tables** spanning film inventory, customer records, rental transactions, and payment history. The two **fact tables** (payment, rental) connect to **13 dimension tables** through foreign key relationships, enabling analysis across geography, content, and customer segments.
+
+Before writing a single query, I mapped the full schema using an Entity Relationship Diagram (ERD) to understand how tables connected — particularly the multi-step geographic chain (`customer → address → city → country`) that would be central to every market analysis query.
 
 ![ERD Diagram](visualizations/Rockbuster_ERD.png)
 
@@ -28,6 +32,8 @@ Key tables used in this analysis:
 - **inventory** → film availability by store location
 
 Full schema documentation: [Data Dictionary](reports/Rockbuster_Streaming_Campaign_Data_Dictionary.pdf)
+
+---
 
 ## Executive Summary
 
@@ -45,15 +51,38 @@ Sports leads all genres at $4,892 in total revenue, followed by Sci-Fi ($4,336) 
 The top 10 films each generate $170–$215 in revenue, while the bottom 10 generate less than $8. This skew means Rockbuster should prioritize acquiring sequel and franchise rights rather than building a large undifferentiated catalog.
 
 **4. High-value customers are spread globally, not clustered in one region.**
-The top three customers by lifetime value are located in Réunion ($211.55), the United States ($208.58), and Brazil ($194.61). This distribution means the launch strategy can't rely on a single geography for premium revenue, but a multi-region approach is required from the start.
+The top three customers by lifetime value are located in Réunion ($211.55), the United States ($208.58), and Brazil ($194.61). This distribution means the launch strategy can't rely on a single geography for premium revenue — a multi-region approach is required from the start.
+
+---
 
 ## Insights Deep Dive
 
 ### Market Prioritization
 
-India leads with 60 customers and over $6,000 in total payments, followed by China and the United States. These three Tier-1 markets combine high customer volume with established payment infrastructure, making them natural launch targets. A secondary tier, including Japan (31), Mexico (30), Brazil (28), and Russia (28), offers strong expansion potential with lower competitive intensity.
+India leads with 60 customers and over $6,000 in total payments, followed by China and the United States. These three Tier-1 markets combine high customer volume with established payment infrastructure, making them natural launch targets. A secondary tier — including Japan (31), Mexico (30), Brazil (28), and Russia (28) — offers strong expansion potential with lower competitive intensity.
+
+To count customers by country, I joined four tables across the geographic chain:
+
+```sql
+-- Number of customers by country
+SELECT
+    COUNT(DISTINCT customer.customer_id) AS number_of_customers,
+    country.country AS country,
+    country.country_id
+FROM customer
+INNER JOIN address
+    ON customer.address_id = address.address_id
+INNER JOIN city
+    ON address.city_id = city.city_id
+INNER JOIN country
+    ON city.country_id = country.country_id
+GROUP BY country.country, country.country_id
+ORDER BY number_of_customers DESC;
+```
 
 ![Top 10 Customer Countries](visualizations/rockbuster-findings.jpg)
+
+---
 
 ### Content Performance
 
@@ -61,11 +90,89 @@ Genre revenue analysis shows a clear hierarchy: Sports, Sci-Fi, and Animation fo
 
 ![Total Revenue by Genre](visualizations/rockbuster-constraints.jpg)
 
+---
+
 ### Customer Value
 
 Average revenue per customer is $101.50, with a 3x variance across regions. The average rental rate sits at $2.98 with a 5-day rental duration. Top customers contribute $160–$210 each in lifetime value, and their global distribution suggests that premium pricing tiers and loyalty programs should be designed for multi-region deployment rather than localized to one market.
 
+To identify which customers were driving the most revenue within the highest-priority markets, I used a **CTE (Common Table Expression)** to break the analysis into three clear steps: find the top countries, narrow to the top cities within those countries, then surface the top 5 customers by total spend.
+
+<details>
+<summary>🔍 Query: Top 5 Customers in Key Markets (CTE)</summary>
+
+```sql
+-- Top 5 customers in top cities (using CTEs)
+
+WITH top_10_countries AS (
+    -- Step 1: Find the top 10 countries by customer count
+    SELECT
+        ctry.country,
+        COUNT(cust.customer_id) AS customer_count
+    FROM customer AS cust
+    INNER JOIN address AS addr
+        ON cust.address_id = addr.address_id
+    INNER JOIN city AS cty
+        ON addr.city_id = cty.city_id
+    INNER JOIN country AS ctry
+        ON cty.country_id = ctry.country_id
+    GROUP BY ctry.country
+    ORDER BY customer_count DESC
+    LIMIT 10),
+
+top_10_cities AS (
+    -- Step 2: Find the top 10 cities within those top countries
+    SELECT
+        cty.city,
+        ctry.country,
+        COUNT(cust.customer_id) AS customer_count
+    FROM customer AS cust
+    INNER JOIN address AS addr
+        ON cust.address_id = addr.address_id
+    INNER JOIN city AS cty
+        ON addr.city_id = cty.city_id
+    INNER JOIN country AS ctry
+        ON cty.country_id = ctry.country_id
+    WHERE ctry.country IN (
+        SELECT country FROM top_10_countries)
+    GROUP BY cty.city, ctry.country
+    ORDER BY customer_count DESC
+    LIMIT 10)
+
+-- Step 3: Find the top 5 customers by total payment in those cities
+SELECT
+    cust.customer_id,
+    cust.first_name,
+    cust.last_name,
+    ctry.country,
+    cty.city,
+    SUM(pay.amount) AS total_amount_paid
+FROM customer AS cust
+INNER JOIN payment AS pay
+    ON cust.customer_id = pay.customer_id
+INNER JOIN address AS addr
+    ON cust.address_id = addr.address_id
+INNER JOIN city AS cty
+    ON addr.city_id = cty.city_id
+INNER JOIN country AS ctry
+    ON cty.country_id = ctry.country_id
+WHERE cty.city IN (
+    SELECT city FROM top_10_cities)
+GROUP BY
+    cust.customer_id,
+    cust.first_name,
+    cust.last_name,
+    cty.city,
+    ctry.country
+ORDER BY total_amount_paid DESC
+LIMIT 5;
+```
+
+</details>
+
 ![Global Customer Distribution](visualizations/rockbuster-impact.jpg)
+
+---
 
 ## Recommendations
 
@@ -81,6 +188,8 @@ Prioritize licensing for Sports, Sci-Fi, and Animation as these genres drive bot
 **Customer Targeting**
 Design acquisition spending by projected CLV per market rather than country size. Build premium and loyalty offerings that work across regions, since high-value customers are not concentrated in a single geography. Target at the city level within priority countries for localized campaigns.
 
+---
+
 ## Tools & Skills
 
 | Tool | Use |
@@ -92,6 +201,8 @@ Design acquisition spending by projected CLV per market rather than country size
 
 **SQL techniques demonstrated:** Multi-table JOINs across 15-table schema · Subqueries (nested and correlated) · Common Table Expressions (CTEs) · Aggregate functions with GROUP BY and HAVING · Window functions for ranking and segmentation
 
+---
+
 ## Deliverables
 
 | Document | Description |
@@ -102,6 +213,7 @@ Design acquisition spending by projected CLV per market rather than country size
 | [Data Dictionary](reports/Rockbuster_Streaming_Campaign_Data_Dictionary.pdf) | Complete database schema with field definitions and relationships |
 | [Analysis Workbook](reports/Rockbuster_Analysis_Results.xlsx) | Detailed findings with supporting tables and charts |
 
+---
 
 ## Author
 
