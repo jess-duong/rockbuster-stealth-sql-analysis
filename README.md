@@ -98,9 +98,6 @@ Average revenue per customer is $101.50, with a 3x variance across regions. The 
 
 To identify which customers were driving the most revenue within the highest-priority markets, I used a **CTE (Common Table Expression)** to break the analysis into three clear steps: find the top countries, narrow to the top cities within those countries, then surface the top 5 customers by total spend.
 
-<details>
-<summary>🔍 Query: Top 5 Customers in Key Markets (CTE)</summary>
-
 ```sql
 -- Top 5 customers in top cities (using CTEs)
 
